@@ -4,33 +4,36 @@
 [ext_resource type="Script" uid="uid://bq6x5tfi43ysk" path="res://scriptss/army.gd" id="2_8tok8"]
 [ext_resource type="PackedScene" uid="uid://bgcoc5n6nf8o3" path="res://scriptss/kill_zone.tscn" id="2_q2vrl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8tok8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2vrl"]
 atlas = ExtResource("1_lh3am")
 region = Rect2(0, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bw3wi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tok8"]
 atlas = ExtResource("1_lh3am")
 region = Rect2(32, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_osp68"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw3wi"]
 atlas = ExtResource("1_lh3am")
 region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ww2gr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_osp68"]
 atlas = ExtResource("1_lh3am")
 region = Rect2(96, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_guuen"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww2gr"]
 atlas = ExtResource("1_lh3am")
 region = Rect2(128, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j82xr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_guuen"]
 atlas = ExtResource("1_lh3am")
 region = Rect2(160, 0, 32, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ilq5l"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_j82xr"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2vrl")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8tok8")
 }, {
@@ -45,26 +48,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_guuen")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j82xr")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcx8u"]
-size = Vector2(12, 25)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilq5l"]
+size = Vector2(14, 27)
 
 [node name="army" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_ilq5l")
+sprite_frames = SubResource("SpriteFrames_j82xr")
 autoplay = "default"
-frame_progress = 0.862988
+frame_progress = 0.83674544
 script = ExtResource("2_8tok8")
 
-[node name="Kill zone" parent="." instance=ExtResource("2_q2vrl")]
+[node name="kill zone" parent="." instance=ExtResource("2_q2vrl")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill zone"]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_xcx8u")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill zone"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_ilq5l")

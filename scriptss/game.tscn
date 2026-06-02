@@ -25,12 +25,12 @@ texture = ExtResource("2_xce7f")
 sources/0 = SubResource("TileSetAtlasSource_nd0yy")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_batdi"]
-size = Vector2(729, 46)
+size = Vector2(729, 44)
 
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, -227)
+position = Vector2(-1, -215)
 zoom = Vector2(1.6, 1.6)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
@@ -39,19 +39,20 @@ scale = Vector2(0.24, 0.24)
 tile_map_data = PackedByteArray("AADe/8T/AAAAAAAAAAAhAMT/AAAAAAAAABBkAMT/AAAAAAAAAACb/8T/AAAAAAAAABAxAMT/AAAAAAAAAADp/8T/AAAAAAAAAAARAMT/AAAAAAAAAADf/8T/AAAAAAAAABD2/8T/AAAAAAAAABDI/8T/AAAAAAAAABDJ/8T/AAAAAAAAAABY/8T/AAAAAAAAAAAV/8T/AAAAAAAAAAB0/8T/AAAAAAAAAACV/8X/AAAAAAAAAAC+/8T/AAAAAAAAAACnAMT/AAAAAAAAABDpAMT/AAAAAAAAABCEAMT/AAAAAAAAABBaAMX/AAAAAAAAABCDAMb/AAAAAAAAABDWAMX/AAAAAAAAABCs/8T/AAAAAAAAAABh/8X/AAAAAAAAAACK/8T/AAAAAAAAAABI/8X/AAAAAAAAAAAw/8P/AAAAAAAAAACEAMX/AAAAAAAAABC0AMX/AAAAAAAAABAV/03/AAAAAAAAACBY/07/AAAAAAAAACCb/07/AAAAAAAAACDe/0//AAAAAAAAACAfAFP/AAAAAAAAACAN/0//AAAAAAAAACBhAFL/AAAAAAAAACCkAE//AAAAAAAAACDnAE//AAAAAAAAACDhAFL/AAAAAAAAACDsAE//AAAAAAAAACA=")
 tile_set = SubResource("TileSet_xce7f")
 
-[node name="Player" parent="." instance=ExtResource("1_batdi")]
-position = Vector2(-1, -17)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(0, -1)
 tile_map_data = PackedByteArray("AAD//wEAAAABAAUAAAD4/wEAAAABAAUAAADx/wEAAAABAAUAAADq/wEAAAABAAUAAAAGAAEAAAABAAUAAAANAAEAAAABAAUAAAAUAAEAAAABAAUAAAA=")
 tile_set = SubResource("TileSet_dbycr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
-position = Vector2(0.5, 19)
+position = Vector2(0.5, 20)
 shape = SubResource("RectangleShape2D_batdi")
 
 [node name="army" parent="." instance=ExtResource("4_xce7f")]
-position = Vector2(238, -23)
+position = Vector2(238, -21)
 flip_h = true
+
+[node name="Player" parent="." instance=ExtResource("1_batdi")]
+position = Vector2(-1, -15)

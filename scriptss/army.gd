@@ -1,4 +1,4 @@
-extends AnimatedSprite2D
+extends Node2D
 
 
 const speed = 100
