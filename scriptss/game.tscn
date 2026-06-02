@@ -1,3 +1,57 @@
-[gd_scene format=3 uid="uid://ch4erx4e0mdkr"]
+[gd_scene load_steps=10 format=4 uid="uid://ch4erx4e0mdkr"]
+
+[ext_resource type="PackedScene" uid="uid://q71ojof7nnh5" path="res://scriptss/player.tscn" id="1_batdi"]
+[ext_resource type="Texture2D" uid="uid://1fxv2yxu5fp3" path="res://Assets/assitts/tile map.png" id="2_xce7f"]
+[ext_resource type="Texture2D" uid="uid://wws3cqc1ktyo" path="res://Assets/assitts/72e369fbe398f823b366d87d81bfe290.jpg" id="3_esy2y"]
+[ext_resource type="PackedScene" uid="uid://bm5y3px1mx6f" path="res://scriptss/army.tscn" id="4_xce7f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_batdi"]
+texture = ExtResource("3_esy2y")
+texture_region_size = Vector2i(108, 100)
+0:0/size_in_atlas = Vector2i(10, 19)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xce7f"]
+sources/0 = SubResource("TileSetAtlasSource_batdi")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd0yy"]
+texture = ExtResource("2_xce7f")
+1:5/size_in_atlas = Vector2i(8, 3)
+1:5/0 = 0
+7:1/size_in_atlas = Vector2i(6, 3)
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dbycr"]
+sources/0 = SubResource("TileSetAtlasSource_nd0yy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_batdi"]
+size = Vector2(729, 46)
 
 [node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, -227)
+zoom = Vector2(1.6, 1.6)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.24, 0.24)
+tile_map_data = PackedByteArray("AADe/8T/AAAAAAAAAAAhAMT/AAAAAAAAABBkAMT/AAAAAAAAAACb/8T/AAAAAAAAABAxAMT/AAAAAAAAAADp/8T/AAAAAAAAAAARAMT/AAAAAAAAAADf/8T/AAAAAAAAABD2/8T/AAAAAAAAABDI/8T/AAAAAAAAABDJ/8T/AAAAAAAAAABY/8T/AAAAAAAAAAAV/8T/AAAAAAAAAAB0/8T/AAAAAAAAAACV/8X/AAAAAAAAAAC+/8T/AAAAAAAAAACnAMT/AAAAAAAAABDpAMT/AAAAAAAAABCEAMT/AAAAAAAAABBaAMX/AAAAAAAAABCDAMb/AAAAAAAAABDWAMX/AAAAAAAAABCs/8T/AAAAAAAAAABh/8X/AAAAAAAAAACK/8T/AAAAAAAAAABI/8X/AAAAAAAAAAAw/8P/AAAAAAAAAACEAMX/AAAAAAAAABC0AMX/AAAAAAAAABAV/03/AAAAAAAAACBY/07/AAAAAAAAACCb/07/AAAAAAAAACDe/0//AAAAAAAAACAfAFP/AAAAAAAAACAN/0//AAAAAAAAACBhAFL/AAAAAAAAACCkAE//AAAAAAAAACDnAE//AAAAAAAAACDhAFL/AAAAAAAAACDsAE//AAAAAAAAACA=")
+tile_set = SubResource("TileSet_xce7f")
+
+[node name="Player" parent="." instance=ExtResource("1_batdi")]
+position = Vector2(-1, -17)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wEAAAABAAUAAAD4/wEAAAABAAUAAADx/wEAAAABAAUAAADq/wEAAAABAAUAAAAGAAEAAAABAAUAAAANAAEAAAABAAUAAAAUAAEAAAABAAUAAAA=")
+tile_set = SubResource("TileSet_dbycr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
+position = Vector2(0.5, 19)
+shape = SubResource("RectangleShape2D_batdi")
+
+[node name="army" parent="." instance=ExtResource("4_xce7f")]
+position = Vector2(238, -23)
+flip_h = true
