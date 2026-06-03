@@ -3,18 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://q71ojof7nnh5" path="res://scriptss/player.tscn" id="1_batdi"]
 [ext_resource type="Texture2D" uid="uid://1fxv2yxu5fp3" path="res://Assets/assitts/tile map.png" id="2_xce7f"]
 [ext_resource type="Texture2D" uid="uid://wws3cqc1ktyo" path="res://Assets/assitts/72e369fbe398f823b366d87d81bfe290.jpg" id="3_esy2y"]
-[ext_resource type="PackedScene" uid="uid://bm5y3px1mx6f" path="res://scriptss/army.tscn" id="4_xce7f"]
+[ext_resource type="PackedScene" uid="uid://dn6oxydblu1pp" path="res://scriptss/skeleton.tscn" id="4_xce7f"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_batdi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xce7f"]
 texture = ExtResource("3_esy2y")
 texture_region_size = Vector2i(108, 100)
 0:0/size_in_atlas = Vector2i(10, 19)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_xce7f"]
-sources/0 = SubResource("TileSetAtlasSource_batdi")
+sources/0 = SubResource("TileSetAtlasSource_xce7f")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nd0yy"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_esy2y"]
 texture = ExtResource("2_xce7f")
 1:5/size_in_atlas = Vector2i(8, 3)
 1:5/0 = 0
@@ -22,7 +22,7 @@ texture = ExtResource("2_xce7f")
 7:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_dbycr"]
-sources/0 = SubResource("TileSetAtlasSource_nd0yy")
+sources/0 = SubResource("TileSetAtlasSource_esy2y")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_batdi"]
 size = Vector2(729, 44)
@@ -50,9 +50,8 @@ tile_set = SubResource("TileSet_dbycr")
 position = Vector2(0.5, 20)
 shape = SubResource("RectangleShape2D_batdi")
 
-[node name="army" parent="." instance=ExtResource("4_xce7f")]
-position = Vector2(238, -21)
-flip_h = true
+[node name="Skeleton" parent="." instance=ExtResource("4_xce7f")]
+position = Vector2(-61, -26)
 
 [node name="Player" parent="." instance=ExtResource("1_batdi")]
-position = Vector2(-1, -15)
+position = Vector2(-1, -20)
