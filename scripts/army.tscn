@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://bm5y3px1mx6f"]
 
 [ext_resource type="Texture2D" uid="uid://dy3ldgd7kb4ek" path="res://Assets/assitts/HERO/1. idle.png" id="1_lh3am"]
-[ext_resource type="Script" uid="uid://bq6x5tfi43ysk" path="res://scriptss/army.gd" id="2_8tok8"]
-[ext_resource type="PackedScene" uid="uid://bgcoc5n6nf8o3" path="res://scriptss/kill_zone.tscn" id="2_q2vrl"]
+[ext_resource type="Script" uid="uid://bq6x5tfi43ysk" path="res://scripts/army.gd" id="2_8tok8"]
+[ext_resource type="PackedScene" uid="uid://bgcoc5n6nf8o3" path="res://scripts/kill_zone.tscn" id="2_q2vrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2vrl"]
 atlas = ExtResource("1_lh3am")

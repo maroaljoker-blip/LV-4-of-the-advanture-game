@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://m3hbeuqeeik7"]
+
+[ext_resource type="Texture2D" uid="uid://dk87pn2s4g1c1" path="res://Assets/Skeleton/button UI.png" id="1_lc8vy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc8vy"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p72k"]
+size = Vector2(14, 12)
+
+[node name="Orange button" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.7149119, 0.63276714, 0.5030185, 1)
+texture = ExtResource("1_lc8vy")
+region_enabled = true
+region_rect = Rect2(0.14832664, 96.59238, 16, 15.703705)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.46877694, 0.46877706, 0.46877682, 1)
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_lc8vy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_7p72k")

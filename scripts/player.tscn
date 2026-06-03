@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://q71ojof7nnh5"]
 
-[ext_resource type="Script" uid="uid://dltmoexwga308" path="res://scriptss/player.gd" id="1_e1mqv"]
+[ext_resource type="Script" uid="uid://dltmoexwga308" path="res://scripts/player.gd" id="1_e1mqv"]
 [ext_resource type="Texture2D" uid="uid://c48es3d4dsgbg" path="res://Assets/assitts/HERO/Hero-die-Sheet.png" id="2_ak2do"]
 [ext_resource type="Texture2D" uid="uid://bdh6h5ecf0vqn" path="res://Assets/assitts/HERO/Hero-idle-Sheet.png" id="2_oqsir"]
 [ext_resource type="Texture2D" uid="uid://ce5w0jdi5qsl2" path="res://Assets/assitts/HERO/Hero-jump-Sheet.png" id="3_oqsir"]

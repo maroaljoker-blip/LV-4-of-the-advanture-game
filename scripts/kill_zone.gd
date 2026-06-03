@@ -3,11 +3,11 @@ extends Area2D
 @onready var timer: Timer = $Timer
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player" or body.name == "player 2" or body.name == "player 3":
+	if body.name == "skeleton":
 		print("you died")
 		Engine.time_scale = 0.5
 
-		body.get_node("AnimatedSprite2D").play("died")
+		
 
 		timer.start()
 
