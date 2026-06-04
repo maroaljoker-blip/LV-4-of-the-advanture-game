@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LV 4 of the advanture game"
-run/main_scene="uid://ch4erx4e0mdkr"
+run/main_scene="uid://344robfxjxg4"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

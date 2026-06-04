@@ -11,13 +11,13 @@ size = Vector2(14, 13)
 [node name="Grean button" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.7576909, 0.73078537, 0.7397903, 1)
+modulate = Color(0.05300995, 0.73477715, 0.21976095, 1)
 texture = ExtResource("1_n412r")
 region_enabled = true
 region_rect = Rect2(0, 0, 16.444445, 16.518518)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-modulate = Color(0.542318, 0.542318, 0.542318, 1)
+modulate = Color(0, 1, 0.34509805, 1)
 position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_bbf8s")
 

@@ -1,11 +1,14 @@
-[gd_scene load_steps=38 format=4 uid="uid://344robfxjxg4"]
+[gd_scene load_steps=89 format=4 uid="uid://344robfxjxg4"]
 
+[ext_resource type="Script" uid="uid://hxgmqn3wkc50" path="res://scripts/intro.gd" id="1_7assr"]
 [ext_resource type="Texture2D" uid="uid://wws3cqc1ktyo" path="res://Assets/assitts/72e369fbe398f823b366d87d81bfe290.jpg" id="1_762vj"]
 [ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="2_mqpnf"]
 [ext_resource type="Texture2D" uid="uid://1fxv2yxu5fp3" path="res://Assets/assitts/tile map.png" id="4_i0a8m"]
 [ext_resource type="Texture2D" uid="uid://bdh6h5ecf0vqn" path="res://Assets/assitts/HERO/Hero-idle-Sheet.png" id="4_u2veh"]
 [ext_resource type="Texture2D" uid="uid://ce5w0jdi5qsl2" path="res://Assets/assitts/HERO/Hero-jump-Sheet.png" id="5_8mahu"]
 [ext_resource type="Texture2D" uid="uid://dl3ytsvl75ifp" path="res://Assets/assitts/HERO/Hero-walk-Sheet.png" id="6_2pm6n"]
+[ext_resource type="Texture2D" uid="uid://dk87pn2s4g1c1" path="res://Assets/Skeleton/button UI.png" id="7_n122t"]
+[ext_resource type="Texture2D" uid="uid://bha5i2kk2ro7u" path="res://Assets/Skeleton/Skeleton Idle.png" id="8_n4wni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xnxp"]
 texture = ExtResource("1_762vj")
@@ -53,22 +56,6 @@ _data = {
 &"typing": SubResource("Animation_762vj")
 }
 
-[sub_resource type="Animation" id="Animation_4xnxp"]
-resource_name = "moving"
-length = 30.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.6, 5.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-171, -506), Vector2(-171, -506), Vector2(-33, -140)]
-}
-
 [sub_resource type="Animation" id="Animation_dm31y"]
 length = 0.001
 tracks/0/type = "value"
@@ -84,26 +71,26 @@ tracks/0/keys = {
 "values": [Vector2(-171, -506)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0a8m"]
-_data = {
-&"RESET": SubResource("Animation_dm31y"),
-&"moving": SubResource("Animation_4xnxp")
-}
-
-[sub_resource type="Animation" id="Animation_i0a8m"]
-resource_name = "moving"
-length = 4.5
+[sub_resource type="Animation" id="Animation_nj68a"]
+resource_name = "new_animation"
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(3.8, 4.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 6, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(-171, -506), Vector2(-171, -506), Vector2(-30, -139)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i0a8m"]
+_data = {
+&"RESET": SubResource("Animation_dm31y"),
+&"new_animation": SubResource("Animation_nj68a")
 }
 
 [sub_resource type="Animation" id="Animation_u2veh"]
@@ -119,6 +106,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i0a8m"]
+resource_name = "moving"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.8, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8mahu"]
@@ -228,22 +231,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_uiweh"]
-resource_name = "new_animation"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(4, 5.7, 6.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_b4a08"]
 length = 0.001
 tracks/0/type = "value"
@@ -259,26 +246,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_uiweh"]
+resource_name = "new_animation"
+length = 22.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 6.5, 7, 21, 21.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jn4s1"]
 _data = {
 &"RESET": SubResource("Animation_b4a08"),
 &"new_animation": SubResource("Animation_uiweh")
-}
-
-[sub_resource type="Animation" id="Animation_8mahu"]
-resource_name = "jjjjjjj"
-length = 12.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_characters")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 6, 7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0, 0, 50]
 }
 
 [sub_resource type="Animation" id="Animation_2pm6n"]
@@ -295,6 +282,46 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8mahu"]
+resource_name = "jjjjjjj"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.4666667, 8.366667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 0, 50]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(8.6, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dm31y"]
 _data = {
@@ -302,7 +329,753 @@ _data = {
 &"jjjjjjj": SubResource("Animation_8mahu")
 }
 
+[sub_resource type="Animation" id="Animation_n122t"]
+resource_name = "lkkllk"
+length = 16.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.933333, 10.533334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 0, 69]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(15.5, 15.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_n4wni"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7assr"]
+_data = {
+&"RESET": SubResource("Animation_n4wni"),
+&"lkkllk": SubResource("Animation_n122t")
+}
+
+[sub_resource type="Animation" id="Animation_7assr"]
+resource_name = "phe kl mkan"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(9.2, 10.433333, 20.8, 21, 21.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-152, -329), Vector2(-152, -157), Vector2(-152, -157), Vector2(-152, -143), Vector2(-152, -341)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_o721q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-152, -329)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wvgmt"]
+_data = {
+&"RESET": SubResource("Animation_o721q"),
+&"phe kl mkan": SubResource("Animation_7assr")
+}
+
+[sub_resource type="Animation" id="Animation_f2l32"]
+resource_name = "ahh"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(9.2, 10.533334, 20.8, 21, 21.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(113, -329), Vector2(113, -157), Vector2(113, -157), Vector2(113, -138), Vector2(113, -365)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_jqpvh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(113, -329)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oj3pp"]
+_data = {
+&"RESET": SubResource("Animation_jqpvh"),
+&"ahh": SubResource("Animation_f2l32")
+}
+
+[sub_resource type="Animation" id="Animation_wvgmt"]
+resource_name = "lklkklfd"
+length = 21.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10.7, 11.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 0.45490196, 0.003921569, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(19.766666, 20.766666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [41, 0]
+}
+
+[sub_resource type="Animation" id="Animation_oj3pp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [41]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fsi1x"]
+_data = {
+&"RESET": SubResource("Animation_oj3pp"),
+&"lklkklfd": SubResource("Animation_wvgmt")
+}
+
+[sub_resource type="Animation" id="Animation_dxo3o"]
+resource_name = "new_animation"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10.7, 11.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(20.5, 20.8, 21.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-281, -71.5), Vector2(-264, -71.5), Vector2(-379, -71.5)]
+}
+
+[sub_resource type="Animation" id="Animation_slwa5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-281, -71.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqxvr"]
+_data = {
+&"RESET": SubResource("Animation_slwa5"),
+&"new_animation": SubResource("Animation_dxo3o")
+}
+
+[sub_resource type="Animation" id="Animation_d6r24"]
+resource_name = "new_animation"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10.7, 11.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20.5, 20.8, 21.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(230.3309, -216), Vector2(230.3309, -216), Vector2(209.3309, -216), Vector2(303.3309, -216)]
+}
+
+[sub_resource type="Animation" id="Animation_7gtea"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(230.3309, -216)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e0fr8"]
+_data = {
+&"RESET": SubResource("Animation_7gtea"),
+&"new_animation": SubResource("Animation_d6r24")
+}
+
+[sub_resource type="Animation" id="Animation_hqxvr"]
+resource_name = "new_animation"
+length = 21.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(15.7, 17.366667, 18.333334, 19.8088),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 38, 38, 0]
+}
+
+[sub_resource type="Animation" id="Animation_e0fr8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lpcp4"]
+_data = {
+&"RESET": SubResource("Animation_e0fr8"),
+&"new_animation": SubResource("Animation_hqxvr")
+}
+
+[sub_resource type="Animation" id="Animation_y0glc"]
+resource_name = "kl"
+length = 21.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10.7, 11.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(0, 1, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(19.8, 20.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [40, 0]
+}
+
+[sub_resource type="Animation" id="Animation_fsi1x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible_characters")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [40]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dxo3o"]
+_data = {
+&"RESET": SubResource("Animation_fsi1x"),
+&"kl": SubResource("Animation_y0glc")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7assr"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o721q"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvgmt"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2l32"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqpvh"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(96, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oj3pp"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(120, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsi1x"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(144, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0glc"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(168, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxo3o"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(192, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slwa5"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(216, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqxvr"]
+atlas = ExtResource("8_n4wni")
+region = Rect2(240, 0, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6r24"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7assr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o721q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvgmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2l32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqpvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oj3pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsi1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0glc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxo3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slwa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqxvr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_lpcp4"]
+resource_name = "omcms'Sc"
+length = 37.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 21.5, 21.51),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(21.5, 23, 35, 37),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1, -332), Vector2(-3, -160), Vector2(-3, -160), Vector2(-3, -356)]
+}
+
+[sub_resource type="Animation" id="Animation_sb6ng"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, -332)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekamo"]
+_data = {
+&"RESET": SubResource("Animation_sb6ng"),
+&"omcms\'Sc": SubResource("Animation_lpcp4")
+}
+
+[sub_resource type="Animation" id="Animation_ekamo"]
+resource_name = "new_animation"
+length = 37.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(22, 23, 35, 37),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_n806t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21uyl"]
+_data = {
+&"RESET": SubResource("Animation_n806t"),
+&"new_animation": SubResource("Animation_ekamo")
+}
+
+[sub_resource type="Animation" id="Animation_21uyl"]
+resource_name = "oh yeah"
+length = 37.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(23, 28, 34.933334, 37),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0, 139, 139, 0]
+}
+
+[sub_resource type="Animation" id="Animation_bnky4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eavkr"]
+_data = {
+&"RESET": SubResource("Animation_bnky4"),
+&"oh yeah": SubResource("Animation_21uyl")
+}
+
+[sub_resource type="Animation" id="Animation_eavkr"]
+resource_name = "scshjc"
+length = 42.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(36.9, 37),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(37, 38, 39, 40, 41, 42),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Game starts in 5", "Game starts in 4", "Game starts in 3", "Game starts in 2", "Game starts in 1", "Game starts in 0"]
+}
+
+[sub_resource type="Animation" id="Animation_oc8nm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Game starts in 5"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xxhb0"]
+_data = {
+&"RESET": SubResource("Animation_oc8nm"),
+&"scshjc": SubResource("Animation_eavkr")
+}
+
 [node name="Intro" type="Node2D"]
+script = ExtResource("1_7assr")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 position = Vector2(10.999998, 156.99997)
@@ -334,7 +1107,7 @@ zoom = Vector2(2, 2)
 libraries = {
 &"": SubResource("AnimationLibrary_i0a8m")
 }
-autoplay = "moving"
+autoplay = "new_animation"
 
 [node name="Label2" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -392,3 +1165,192 @@ libraries = {
 &"": SubResource("AnimationLibrary_dm31y")
 }
 autoplay = "jjjjjjj"
+
+[node name="Label4" type="Label" parent="."]
+offset_left = -307.0
+offset_top = -292.0
+offset_right = 168.0
+offset_bottom = -269.0
+theme_override_fonts/font = ExtResource("2_mqpnf")
+text = "and those are the buttons you will be
+ using to  clear the enemies"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label4"]
+libraries = {
+&"": SubResource("AnimationLibrary_7assr")
+}
+autoplay = "lkkllk"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.9490196, 0.5137255, 0, 1)
+position = Vector2(-152, -329)
+texture = ExtResource("7_n122t")
+region_enabled = true
+region_rect = Rect2(0.14832664, 96.59238, 16, 15.703705)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_wvgmt")
+}
+autoplay = "phe kl mkan"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.7576909, 0.73078537, 0.7397903, 1)
+position = Vector2(113, -329)
+texture = ExtResource("7_n122t")
+region_enabled = true
+region_rect = Rect2(0, 0, 16.444445, 16.518518)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_oj3pp")
+}
+autoplay = "ahh"
+
+[node name="Label5" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 0.45490196, 0.003921569, 1)
+offset_left = -266.0
+offset_top = -79.0
+offset_right = 246.0
+offset_bottom = -56.0
+theme_override_fonts/font = ExtResource("2_mqpnf")
+text = "The orange one to clear the left side "
+visible_characters = 41
+visible_ratio = 1.0789474
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label5"]
+libraries = {
+&"": SubResource("AnimationLibrary_fsi1x")
+}
+autoplay = "lklkklfd"
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-281, -71.5)
+scale = Vector2(1.4444444, 1.1666666)
+texture = ExtResource("7_n122t")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(16.091171, 96.197716, 16, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D3"]
+libraries = {
+&"": SubResource("AnimationLibrary_hqxvr")
+}
+autoplay = "new_animation"
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(230.3309, -216)
+scale = Vector2(1.4586371, 1.1764712)
+texture = ExtResource("7_n122t")
+region_enabled = true
+region_rect = Rect2(15.852032, -0.03659892, 16.78796, 17.185184)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D4"]
+libraries = {
+&"": SubResource("AnimationLibrary_e0fr8")
+}
+autoplay = "new_animation"
+
+[node name="Label7" type="Label" parent="."]
+offset_left = -307.0
+offset_top = -291.0
+offset_right = 195.0
+offset_bottom = -268.0
+theme_override_fonts/font = ExtResource("2_mqpnf")
+text = "All you have to do is to jump on them "
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label7"]
+libraries = {
+&"": SubResource("AnimationLibrary_lpcp4")
+}
+autoplay = "new_animation"
+
+[node name="Label6" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -292.0
+offset_top = -227.0
+offset_right = 214.0
+offset_bottom = -204.0
+theme_override_fonts/font = ExtResource("2_mqpnf")
+text = "The grean one to clear the right side"
+visible_characters = 40
+visible_ratio = 1.081081
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label6"]
+libraries = {
+&"": SubResource("AnimationLibrary_dxo3o")
+}
+autoplay = "kl"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-1, -332)
+sprite_frames = SubResource("SpriteFrames_d6r24")
+autoplay = "default"
+frame_progress = 0.16053566
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D2"]
+libraries = {
+&"": SubResource("AnimationLibrary_ekamo")
+}
+autoplay = "omcms'Sc"
+
+[node name="Label8" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -58.0
+offset_top = -134.0
+offset_right = 60.0
+offset_bottom = -111.0
+theme_override_fonts/font = ExtResource("2_mqpnf")
+text = "   Karl"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label8"]
+root_node = NodePath("../../Label8")
+libraries = {
+&"": SubResource("AnimationLibrary_21uyl")
+}
+autoplay = "new_animation"
+
+[node name="Label9" type="Label" parent="."]
+offset_left = -319.0
+offset_top = -292.0
+offset_right = 811.0
+offset_bottom = -257.0
+theme_override_fonts/font = ExtResource("2_mqpnf")
+text = "The game consists of 8 waves, with each
+ wave becoming more difficult than the
+ last. and this Karl btw he wishes you good
+luck so am I
+"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label9"]
+libraries = {
+&"": SubResource("AnimationLibrary_eavkr")
+}
+autoplay = "oh yeah"
+
+[node name="Label10" type="Label" parent="."]
+visible = false
+offset_left = -113.0
+offset_top = -157.0
+offset_right = 109.0
+offset_bottom = -134.0
+theme_override_fonts/font = ExtResource("2_mqpnf")
+text = "Game starts in 5"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label10"]
+libraries = {
+&"": SubResource("AnimationLibrary_xxhb0")
+}
+autoplay = "scshjc"
