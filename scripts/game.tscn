@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://ch4erx4e0mdkr"]
+[gd_scene load_steps=47 format=4 uid="uid://ch4erx4e0mdkr"]
 
 [ext_resource type="Texture2D" uid="uid://1fxv2yxu5fp3" path="res://Assets/assitts/tile map.png" id="2_xce7f"]
 [ext_resource type="Texture2D" uid="uid://wws3cqc1ktyo" path="res://Assets/assitts/72e369fbe398f823b366d87d81bfe290.jpg" id="3_esy2y"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://qavquj6boefy" path="res://scripts/area_2d4.gd" id="8_krunx"]
 [ext_resource type="PackedScene" uid="uid://bvtfbqt12vtf2" path="res://scripts/skeleton_20.tscn" id="9_x8pbt"]
 [ext_resource type="Script" uid="uid://mcc4kkmi5dor" path="res://scripts/area_2d_4.gd" id="10_lfna2"]
+[ext_resource type="Script" uid="uid://cymafu1rjsmt1" path="res://scripts/area_2d_3.gd" id="11_m26gy"]
+[ext_resource type="Script" uid="uid://kn4bs2af3oxk" path="res://scripts/area_2d_45.gd" id="12_2b28d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xce7f"]
 texture = ExtResource("3_esy2y")
@@ -48,21 +50,8 @@ size = Vector2(15, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m26gy"]
 size = Vector2(16, 0)
 
-[sub_resource type="Animation" id="Animation_m8yj6"]
-resource_name = "new_animation"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_characters")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0, 69, 0]
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w37d"]
+size = Vector2(0, 62)
 
 [sub_resource type="Animation" id="Animation_krunx"]
 length = 0.001
@@ -79,17 +68,227 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_m8yj6"]
+resource_name = "new_animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 129, 0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x8pbt"]
 _data = {
 &"RESET": SubResource("Animation_krunx"),
 &"new_animation": SubResource("Animation_m8yj6")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8yj6"]
-size = Vector2(14, 1)
+[sub_resource type="Animation" id="Animation_lfna2"]
+resource_name = "new_animation"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_m26gy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2b28d"]
+_data = {
+&"RESET": SubResource("Animation_m26gy"),
+&"new_animation": SubResource("Animation_lfna2")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8pbt"]
+size = Vector2(2, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b28d"]
 size = Vector2(13, 0)
+
+[sub_resource type="Animation" id="Animation_5w37d"]
+resource_name = "same"
+length = 45.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_n26xj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0c7p4"]
+_data = {
+&"RESET": SubResource("Animation_n26xj"),
+&"same": SubResource("Animation_5w37d")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8yj6"]
+size = Vector2(14, 1)
+
+[sub_resource type="Animation" id="Animation_qc5qw"]
+resource_name = "the longest one "
+length = 45.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_6qanw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ushlv"]
+_data = {
+&"RESET": SubResource("Animation_6qanw"),
+&"the longest one ": SubResource("Animation_qc5qw")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n26xj"]
+size = Vector2(13, 0)
+
+[sub_resource type="Animation" id="Animation_0c7p4"]
+resource_name = "new_animation"
+length = 13.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 13.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ushlv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u516q"]
+_data = {
+&"RESET": SubResource("Animation_ushlv"),
+&"new_animation": SubResource("Animation_0c7p4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0c7p4"]
+size = Vector2(15, 0)
+
+[sub_resource type="Animation" id="Animation_u516q"]
+resource_name = "njanxj"
+length = 13.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 13.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_qs7e0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7g3yc"]
+_data = {
+&"RESET": SubResource("Animation_qs7e0"),
+&"njanxj": SubResource("Animation_u516q")
+}
 
 [node name="Game" type="Node2D"]
 
@@ -102,8 +301,6 @@ position = Vector2(0, -1)
 scale = Vector2(0.24, 0.24)
 tile_map_data = PackedByteArray("AADe/8T/AAAAAAAAAAAhAMT/AAAAAAAAABBkAMT/AAAAAAAAAACb/8T/AAAAAAAAABAxAMT/AAAAAAAAAADp/8T/AAAAAAAAAAARAMT/AAAAAAAAAADf/8T/AAAAAAAAABD2/8T/AAAAAAAAABDI/8T/AAAAAAAAABDJ/8T/AAAAAAAAAABY/8T/AAAAAAAAAAAV/8T/AAAAAAAAAAB0/8T/AAAAAAAAAACV/8X/AAAAAAAAAAC+/8T/AAAAAAAAAACnAMT/AAAAAAAAABDpAMT/AAAAAAAAABCEAMT/AAAAAAAAABBaAMX/AAAAAAAAABCDAMb/AAAAAAAAABDWAMX/AAAAAAAAABCs/8T/AAAAAAAAAABh/8X/AAAAAAAAAACK/8T/AAAAAAAAAABI/8X/AAAAAAAAAAAw/8P/AAAAAAAAAACEAMX/AAAAAAAAABC0AMX/AAAAAAAAABAV/03/AAAAAAAAACBY/07/AAAAAAAAACCb/07/AAAAAAAAACDe/0//AAAAAAAAACAfAFP/AAAAAAAAACAN/0//AAAAAAAAACBhAFL/AAAAAAAAACCkAE//AAAAAAAAACDnAE//AAAAAAAAACDhAFL/AAAAAAAAACDsAE//AAAAAAAAACA=")
 tile_set = SubResource("TileSet_xce7f")
-
-[node name="Node" type="Node" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, -1)
@@ -138,11 +335,15 @@ shape = SubResource("RectangleShape2D_krunx")
 position = Vector2(121, -17)
 shape = SubResource("RectangleShape2D_m26gy")
 
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
+position = Vector2(128, -49)
+shape = SubResource("RectangleShape2D_5w37d")
+
 [node name="Grean button" parent="." instance=ExtResource("5_6igeb")]
 position = Vector2(121, -10)
 
 [node name="Orange button" parent="." instance=ExtResource("6_nrx5b")]
-position = Vector2(-112, -10)
+position = Vector2(-113, -10)
 
 [node name="Player" parent="." instance=ExtResource("6_e48sv")]
 position = Vector2(0, -23)
@@ -151,12 +352,14 @@ position = Vector2(0, -23)
 
 [node name="Label" type="Label" parent="labels"]
 offset_left = -381.0
-offset_top = -309.0
+offset_top = -301.0
 offset_right = 413.0
-offset_bottom = -274.0
+offset_bottom = -247.0
+pivot_offset = Vector2(1477, -148)
 theme_override_fonts/font = ExtResource("7_m8yj6")
-text = "Oh i forgot to tell you, you have three lives
- in each button"
+text = "Oh, I forgot to tell you, you have three lives
+ In each button, the enemies will disappear
+ after 1 second of clicking the button"
 visible_characters = 0
 visible_ratio = 0.0
 
@@ -166,28 +369,116 @@ libraries = {
 }
 autoplay = "new_animation"
 
-[node name="skeleton" parent="." groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-393, -21)
+[node name="Label2" type="Label" parent="labels"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -57.0
+offset_top = -168.0
+offset_right = 67.0
+offset_bottom = -144.0
+theme_override_fonts/font = ExtResource("7_m8yj6")
+theme_override_font_sizes/font_size = 23
+text = "Wave 1"
 
-[node name="skeleton2" parent="." groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-372, -21)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="labels/Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_2b28d")
+}
+autoplay = "new_animation"
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("8_krunx")
+[node name="Skeletons" type="Node" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-112, -18.5)
-shape = SubResource("RectangleShape2D_m8yj6")
+[node name="skeleton2" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
+position = Vector2(-435, -21)
 
-[node name="skeleton 20" parent="." groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(356, -20)
+[node name="skeleton4" parent="Skeletons" groups=["skeletons left1.1"] instance=ExtResource("4_xce7f")]
+position = Vector2(-573, -21)
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="skeleton3" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
+position = Vector2(-472, -21)
+
+[node name="skeleton 20" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
+position = Vector2(415, -20)
+
+[node name="skeleton 21" parent="Skeletons" groups=["skeletons right1.1"] instance=ExtResource("9_x8pbt")]
+position = Vector2(551, -19)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-6, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-122.5, -15)
+shape = SubResource("RectangleShape2D_x8pbt")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(137, -34)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-6, 18)
+shape = SubResource("RectangleShape2D_x8pbt")
+
+[node name="Buttons areas" type="Node" parent="."]
+
+[node name="Area2D2" type="Area2D" parent="Buttons areas"]
 script = ExtResource("10_lfna2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons areas/Area2D2"]
 position = Vector2(120.5, -19)
 shape = SubResource("RectangleShape2D_2b28d")
+disabled = true
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons areas/Area2D2/CollisionShape2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_0c7p4")
+}
+autoplay = "same"
+
+[node name="Area2D" type="Area2D" parent="Buttons areas"]
+script = ExtResource("8_krunx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons areas/Area2D"]
+position = Vector2(-112, -18.5)
+shape = SubResource("RectangleShape2D_m8yj6")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons areas/Area2D/CollisionShape2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_ushlv")
+}
+autoplay = "the longest one "
+
+[node name="Area2D3" type="Area2D" parent="Buttons areas"]
+script = ExtResource("11_m26gy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons areas/Area2D3"]
+position = Vector2(-112.5, -19)
+shape = SubResource("RectangleShape2D_n26xj")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons areas/Area2D3/CollisionShape2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_u516q")
+}
+autoplay = "new_animation"
+
+[node name="Area2D4" type="Area2D" parent="Buttons areas"]
+script = ExtResource("12_2b28d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons areas/Area2D4"]
+position = Vector2(120.5, -19)
+shape = SubResource("RectangleShape2D_0c7p4")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons areas/Area2D4/CollisionShape2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_7g3yc")
+}
+autoplay = "njanxj"
+
+[connection signal="body_entered" from="Buttons areas/Area2D2" to="Buttons areas/Area2D2" method="_on_body_entered"]
+[connection signal="body_entered" from="Buttons areas/Area2D" to="Buttons areas/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Buttons areas/Area2D3" to="Buttons areas/Area2D3" method="_on_body_entered"]
+[connection signal="body_entered" from="Buttons areas/Area2D4" to="Buttons areas/Area2D4" method="_on_body_entered"]

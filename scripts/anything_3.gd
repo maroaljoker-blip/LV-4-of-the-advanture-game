@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@onready var anything_10: CharacterBody2D = $"../anything 10"
+@onready var anything: CharacterBody2D = $"../anything"
+
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 const speed = -0.29
@@ -15,7 +16,7 @@ func _process(delta):
 	if moving:
 		position.x += speed * delta
 
-	if !activated and !is_instance_valid(anything_10):
+	if !activated and !is_instance_valid(anything):
 		activated = true
 
 		print("Previous body disappeared")

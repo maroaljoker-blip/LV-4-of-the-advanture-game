@@ -6,7 +6,7 @@ var hits = 0
 @onready var player: CharacterBody2D = $"../Player"
 
 func _on_body_entered(body):
-	if body.name == "anything2" or body.name == "anything" or body.name == "anything 3":
+	if body.name == "anything 20" or body.name == "anything 10" or body.name == "anything 30":
 		hits += 1
 		print("Hits:", hits)
 		print(body.name)

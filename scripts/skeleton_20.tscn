@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqehkj814qu84" path="res://scripts/anything_10.tscn" id="6_e2aqw"]
 [ext_resource type="Script" uid="uid://drldj07aphgy8" path="res://scripts/anything_10.gd" id="7_e2aqw"]
 [ext_resource type="PackedScene" uid="uid://w8ddnwnhij6f" path="res://scripts/anything_20.tscn" id="7_neds2"]
-[ext_resource type="PackedScene" uid="uid://bdf7102s8s0a" path="res://scripts/anything_3.tscn" id="7_sw2o1"]
+[ext_resource type="PackedScene" uid="uid://51forkjbpahc" path="res://scripts/anything_30.tscn" id="8_e2aqw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4hm2r"]
 atlas = ExtResource("2_e2aqw")
@@ -360,7 +360,8 @@ collision_mask = 4
 script = ExtResource("1_3m85e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(-1, 2.25)
+scale = Vector2(1.0909091, 1.0454545)
 sprite_frames = SubResource("SpriteFrames_tya7y")
 animation = &"walk"
 autoplay = "walk"
@@ -370,16 +371,17 @@ flip_h = true
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_lb5a5")
 
-[node name="anything 3" parent="." instance=ExtResource("7_sw2o1")]
-position = Vector2(-2, 12)
-collision_layer = 2
-collision_mask = 4
-
 [node name="anything 10" parent="." instance=ExtResource("6_e2aqw")]
 position = Vector2(-2, 2)
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("7_e2aqw")
 
 [node name="anything 20" parent="." instance=ExtResource("7_neds2")]
-position = Vector2(-5, 7)
+position = Vector2(-5, 6)
+
+[node name="anything 30" parent="." instance=ExtResource("8_e2aqw")]
+position = Vector2(-2, 12)
+rotation = 1.5707964
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
