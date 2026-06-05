@@ -1,5 +1,6 @@
 extends Area2D
 
+
 var hits = 0
 
 @onready var player: CharacterBody2D = $"../Player"

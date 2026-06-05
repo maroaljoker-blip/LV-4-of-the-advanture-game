@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdf7102s8s0a"]
+
+[ext_resource type="Script" uid="uid://c16nu4af5cibe" path="res://scripts/anything_3.gd" id="1_8rw3q"]
+[ext_resource type="Texture2D" uid="uid://ddeymnystr8fk" path="res://Assets/assitts/MonedaR.png" id="1_rm2cr"]
+[ext_resource type="Script" uid="uid://dui1ahngba7ig" path="res://scripts/area_2d3.gd" id="2_yw73k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw73k"]
+size = Vector2(0, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rw3q"]
+size = Vector2(0, 14)
+
+[node name="anything 3" type="CharacterBody2D"]
+rotation = 1.5707964
+script = ExtResource("1_8rw3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -1)
+shape = SubResource("RectangleShape2D_yw73k")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+light_mask = 2
+visibility_layer = 2
+texture = ExtResource("1_rm2cr")
+region_enabled = true
+region_rect = Rect2(48.5, 0, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_yw73k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.9999999, -0.9999999)
+rotation = 0.017453292
+shape = SubResource("RectangleShape2D_8rw3q")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

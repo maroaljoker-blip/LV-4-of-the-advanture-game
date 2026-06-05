@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://ch4erx4e0mdkr"]
+[gd_scene load_steps=26 format=4 uid="uid://ch4erx4e0mdkr"]
 
 [ext_resource type="Texture2D" uid="uid://1fxv2yxu5fp3" path="res://Assets/assitts/tile map.png" id="2_xce7f"]
 [ext_resource type="Texture2D" uid="uid://wws3cqc1ktyo" path="res://Assets/assitts/72e369fbe398f823b366d87d81bfe290.jpg" id="3_esy2y"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c5webmamf7x03" path="res://scripts/grean_button.tscn" id="5_6igeb"]
 [ext_resource type="PackedScene" uid="uid://q71ojof7nnh5" path="res://scripts/player.tscn" id="6_e48sv"]
 [ext_resource type="PackedScene" uid="uid://m3hbeuqeeik7" path="res://scripts/orange_button.tscn" id="6_nrx5b"]
+[ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="7_m8yj6"]
+[ext_resource type="Script" uid="uid://qavquj6boefy" path="res://scripts/area_2d4.gd" id="8_krunx"]
+[ext_resource type="PackedScene" uid="uid://bvtfbqt12vtf2" path="res://scripts/skeleton_20.tscn" id="9_x8pbt"]
+[ext_resource type="Script" uid="uid://mcc4kkmi5dor" path="res://scripts/area_2d_4.gd" id="10_lfna2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xce7f"]
 texture = ExtResource("3_esy2y")
@@ -27,16 +31,65 @@ texture = ExtResource("2_xce7f")
 sources/0 = SubResource("TileSetAtlasSource_esy2y")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_batdi"]
-size = Vector2(235, 45)
+size = Vector2(235, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrx5b"]
 size = Vector2(215, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygf07"]
-size = Vector2(284, 40)
+size = Vector2(284, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfna2"]
-size = Vector2(0, 27)
+size = Vector2(0, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krunx"]
+size = Vector2(15, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m26gy"]
+size = Vector2(16, 0)
+
+[sub_resource type="Animation" id="Animation_m8yj6"]
+resource_name = "new_animation"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 69, 0]
+}
+
+[sub_resource type="Animation" id="Animation_krunx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8pbt"]
+_data = {
+&"RESET": SubResource("Animation_krunx"),
+&"new_animation": SubResource("Animation_m8yj6")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8yj6"]
+size = Vector2(14, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b28d"]
+size = Vector2(13, 0)
 
 [node name="Game" type="Node2D"]
 
@@ -52,18 +105,6 @@ tile_set = SubResource("TileSet_xce7f")
 
 [node name="Node" type="Node" parent="."]
 
-[node name="Skeleton2" parent="Node" instance=ExtResource("4_xce7f")]
-position = Vector2(-362, -21)
-
-[node name="Skeleton3" parent="Node" instance=ExtResource("4_xce7f")]
-position = Vector2(-248, -22)
-
-[node name="Skeleton" parent="Node" instance=ExtResource("4_xce7f")]
-position = Vector2(-326, -21)
-
-[node name="skeleton" parent="Node" instance=ExtResource("4_xce7f")]
-position = Vector2(-290, -21)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, -1)
 tile_map_data = PackedByteArray("AAD//wEAAAABAAUAAAD4/wEAAAABAAUAAADx/wEAAAABAAUAAADq/wEAAAABAAUAAAAGAAEAAAABAAUAAAANAAEAAAABAAUAAAAUAAEAAAABAAUAAAA=")
@@ -72,7 +113,7 @@ tile_set = SubResource("TileSet_dbycr")
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
-position = Vector2(247.5, 19.5)
+position = Vector2(247.5, 21)
 shape = SubResource("RectangleShape2D_batdi")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
@@ -80,14 +121,22 @@ position = Vector2(4.5, 11)
 shape = SubResource("RectangleShape2D_nrx5b")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
-position = Vector2(-263, 17)
+position = Vector2(-263, 18.5)
 shape = SubResource("RectangleShape2D_ygf07")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
 light_mask = 4
 visibility_layer = 4
-position = Vector2(-119, -31.5)
+position = Vector2(-119, -46.5)
 shape = SubResource("RectangleShape2D_lfna2")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
+position = Vector2(-111.5, -16)
+shape = SubResource("RectangleShape2D_krunx")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D"]
+position = Vector2(121, -17)
+shape = SubResource("RectangleShape2D_m26gy")
 
 [node name="Grean button" parent="." instance=ExtResource("5_6igeb")]
 position = Vector2(121, -10)
@@ -97,3 +146,48 @@ position = Vector2(-112, -10)
 
 [node name="Player" parent="." instance=ExtResource("6_e48sv")]
 position = Vector2(0, -23)
+
+[node name="labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="labels"]
+offset_left = -381.0
+offset_top = -309.0
+offset_right = 413.0
+offset_bottom = -274.0
+theme_override_fonts/font = ExtResource("7_m8yj6")
+text = "Oh i forgot to tell you, you have three lives
+ in each button"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="labels/Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_x8pbt")
+}
+autoplay = "new_animation"
+
+[node name="skeleton" parent="." groups=["skeletons left"] instance=ExtResource("4_xce7f")]
+position = Vector2(-393, -21)
+
+[node name="skeleton2" parent="." groups=["skeletons left"] instance=ExtResource("4_xce7f")]
+position = Vector2(-372, -21)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("8_krunx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-112, -18.5)
+shape = SubResource("RectangleShape2D_m8yj6")
+
+[node name="skeleton 20" parent="." groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
+position = Vector2(356, -20)
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("10_lfna2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(120.5, -19)
+shape = SubResource("RectangleShape2D_2b28d")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

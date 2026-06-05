@@ -7,9 +7,11 @@
 size = Vector2(14, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc8vy"]
-size = Vector2(14.3125, 8)
+size = Vector2(14.15625, 22)
 
 [node name="Orange button" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_cowyx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -19,6 +21,8 @@ region_enabled = true
 region_rect = Rect2(0.14832664, 96.59238, 16, 15.703705)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1, -1)
@@ -28,7 +32,7 @@ shape = SubResource("RectangleShape2D_7p72k")
 modulate = Color(0.46877694, 0.46877706, 0.46877682, 1)
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-14, -1)
+position = Vector2(-14.078125, -5)
 shape = SubResource("RectangleShape2D_lc8vy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

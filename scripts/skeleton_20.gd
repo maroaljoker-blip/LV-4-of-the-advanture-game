@@ -1,7 +1,9 @@
 extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-const speed = 25
+
+
+const speed = -25
 var moving = true
 var dead = false
 func die():
