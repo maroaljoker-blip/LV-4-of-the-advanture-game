@@ -105,7 +105,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_lfna2"]
 resource_name = "new_animation"
-length = 13.0
+length = 11.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -113,7 +113,7 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(10, 13),
+"times": PackedFloat32Array(10, 11),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -270,9 +270,9 @@ position = Vector2(0, -23)
 
 [node name="Label" type="Label" parent="labels"]
 offset_left = -381.0
-offset_top = -346.0
+offset_top = -301.0
 offset_right = 413.0
-offset_bottom = -292.0
+offset_bottom = -247.0
 pivot_offset = Vector2(1477, -148)
 theme_override_fonts/font = ExtResource("7_m8yj6")
 text = "Oh, I forgot to tell you, you have three lives
@@ -289,10 +289,10 @@ autoplay = "new_animation"
 
 [node name="Label2" type="Label" parent="labels"]
 modulate = Color(1, 1, 1, 0)
-offset_left = -55.0
-offset_top = -292.0
-offset_right = 69.0
-offset_bottom = -268.0
+offset_left = -57.0
+offset_top = -168.0
+offset_right = 67.0
+offset_bottom = -144.0
 theme_override_fonts/font = ExtResource("7_m8yj6")
 theme_override_font_sizes/font_size = 23
 text = "Wave 1"
@@ -309,40 +309,16 @@ autoplay = "new_animation"
 position = Vector2(-435, -21)
 
 [node name="skeleton4" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-759, -21)
+position = Vector2(-573, -21)
 
 [node name="skeleton3" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-585, -21)
+position = Vector2(-472, -21)
 
 [node name="skeleton 20" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
 position = Vector2(415, -20)
 
 [node name="skeleton 21" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(794, -19)
-
-[node name="skeleton 22" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(898, -19)
-
-[node name="skeleton" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-953, -21)
-
-[node name="skeleton5" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-1225, -23)
-
-[node name="skeleton6" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-1090, -19)
-
-[node name="skeleton7" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-1358, -21)
-
-[node name="skeleton 23" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(1127, -21)
-
-[node name="skeleton 24" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(1307, -21)
-
-[node name="skeleton 25" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(1399, -21)
+position = Vector2(551, -19)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-6, 0)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://m3hbeuqeeik7"]
+[gd_scene load_steps=6 format=3 uid="uid://m3hbeuqeeik7"]
 
 [ext_resource type="Script" uid="uid://2olx5d80mnhp" path="res://scripts/orange_button.gd" id="1_cowyx"]
 [ext_resource type="Texture2D" uid="uid://dk87pn2s4g1c1" path="res://Assets/Skeleton/button UI.png" id="1_lc8vy"]
+[ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="3_r0mup"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p72k"]
 size = Vector2(14, 12)
@@ -34,5 +35,12 @@ light_mask = 2
 visibility_layer = 2
 position = Vector2(-14.078125, -5)
 shape = SubResource("RectangleShape2D_lc8vy")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -29.0
+offset_right = 20.0
+offset_bottom = -6.0
+theme_override_fonts/font = ExtResource("3_r0mup")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

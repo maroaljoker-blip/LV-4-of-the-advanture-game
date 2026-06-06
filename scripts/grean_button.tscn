@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5webmamf7x03"]
+[gd_scene load_steps=6 format=3 uid="uid://c5webmamf7x03"]
 
 [ext_resource type="Script" uid="uid://5cd27s8dw006" path="res://scripts/grean_button.gd" id="1_kkako"]
 [ext_resource type="Texture2D" uid="uid://dk87pn2s4g1c1" path="res://Assets/Skeleton/button UI.png" id="1_n412r"]
+[ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="3_uxm73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbf8s"]
 size = Vector2(15, 25)
@@ -32,5 +33,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_x0fab")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -31.0
+offset_right = 20.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("3_uxm73")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
