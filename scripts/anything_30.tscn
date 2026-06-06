@@ -21,10 +21,10 @@ shape = SubResource("RectangleShape2D_5w84v")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 light_mask = 2
 visibility_layer = 2
 texture = ExtResource("2_vd7bt")
+region_enabled = true
 region_rect = Rect2(48.5, 0, 16, 16)
 
 [node name="Area2D" type="Area2D" parent="."]

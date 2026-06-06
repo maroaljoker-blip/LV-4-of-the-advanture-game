@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="3_uxm73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbf8s"]
-size = Vector2(15, 25)
+size = Vector2(7, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0fab"]
 size = Vector2(14, 13)
@@ -17,7 +17,7 @@ script = ExtResource("1_kkako")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(0, 1, 0.34509805, 1)
-position = Vector2(15.5, -5.5)
+position = Vector2(11.5, -5.5)
 shape = SubResource("RectangleShape2D_bbf8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
