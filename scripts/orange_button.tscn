@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://m3hbeuqeeik7"]
+[gd_scene load_steps=5 format=3 uid="uid://m3hbeuqeeik7"]
 
 [ext_resource type="Script" uid="uid://2olx5d80mnhp" path="res://scripts/orange_button.gd" id="1_cowyx"]
 [ext_resource type="Texture2D" uid="uid://dk87pn2s4g1c1" path="res://Assets/Skeleton/button UI.png" id="1_lc8vy"]
 [ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="3_r0mup"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p72k"]
-size = Vector2(14, 12)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lc8vy"]
-size = Vector2(14.15625, 22)
+size = Vector2(11, 24)
 
 [node name="Orange button" type="Area2D"]
 collision_layer = 4
@@ -21,19 +18,11 @@ texture = ExtResource("1_lc8vy")
 region_enabled = true
 region_rect = Rect2(0.14832664, 96.59238, 16, 15.703705)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1, -1)
-shape = SubResource("RectangleShape2D_7p72k")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(0.46877694, 0.46877706, 0.46877682, 1)
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-14.078125, -5)
+position = Vector2(-4.5, -6)
 shape = SubResource("RectangleShape2D_lc8vy")
 
 [node name="Label3" type="Label" parent="."]

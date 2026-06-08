@@ -12,7 +12,7 @@ func _ready():
 	update_label()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "anything 20" or body.name == "anything 10" or body.name == "anything 30":
+	if body.name == "Sin" or body.name == "Cos" or body.name == "Tan" or body.name == "PH" or body.name == "HP" or body.name == "PHP":
 
 		if not can_take_hit:
 			return

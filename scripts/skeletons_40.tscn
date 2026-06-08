@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://cw8cxtptoclfk" path="res://Assets/Skeleton/Skeleton Dead.png" id="3_alvpl"]
 [ext_resource type="Texture2D" uid="uid://dgn26ihipqn7o" path="res://Assets/Skeleton/Skeleton Walk.png" id="4_nw2u0"]
 [ext_resource type="PackedScene" uid="uid://b1h0bw34j6wxu" path="res://scripts/anything_2.tscn" id="5_mv4yc"]
+[ext_resource type="Script" uid="uid://q0hn6opjp3re" path="res://scripts/anything_101.gd" id="6_0ghn1"]
 [ext_resource type="Script" uid="uid://dlag212mark4d" path="res://scripts/anything_201.gd" id="6_n0qh4"]
 [ext_resource type="PackedScene" uid="uid://b00auwaqce7ck" path="res://scripts/anything.tscn" id="6_vnyud"]
 [ext_resource type="PackedScene" uid="uid://bdf7102s8s0a" path="res://scripts/anything_3.tscn" id="7_n0qh4"]
-[ext_resource type="Script" uid="uid://b5u7kl1vu4fcc" path="res://scripts/anything _101.gd" id="8_n0qh4"]
 [ext_resource type="Script" uid="uid://ct8w6le20t1xh" path="res://scripts/anything_301.gd" id="10_0ghn1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4hm2r"]
@@ -370,19 +370,15 @@ position = Vector2(1, 8.5)
 shape = SubResource("RectangleShape2D_xumtd")
 
 [node name="anything" parent="." instance=ExtResource("6_vnyud")]
-position = Vector2(4, 2)
-script = ExtResource("8_n0qh4")
+position = Vector2(2, 1)
+script = ExtResource("6_0ghn1")
 
 [node name="anything 3" parent="." instance=ExtResource("7_n0qh4")]
-position = Vector2(4, 12)
-collision_layer = 2
-collision_mask = 4
+position = Vector2(3, 12)
 script = ExtResource("10_0ghn1")
 
 [node name="anything2" parent="." instance=ExtResource("5_mv4yc")]
-position = Vector2(11, 6)
-collision_layer = 2
-collision_mask = 4
+position = Vector2(10, 6)
 script = ExtResource("6_n0qh4")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -11,7 +11,7 @@ func _ready():
 	update_label()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "anything2" or body.name == "anything" or body.name == "anything 3":
+	if body.name == "alpha" or body.name == "beta" or body.name == "theta" or body.name == "shawrma lahme" or body.name == "shawrma phrakh" or body.name == "shawrma sjk": 
 
 		if not can_take_hit:
 			return
@@ -30,7 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 			get_tree().reload_current_scene()
 			return
 
-		await get_tree().create_timer(0.4).timeout
+		
 		can_take_hit = true
 
 func update_label():

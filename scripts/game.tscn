@@ -1,15 +1,16 @@
-[gd_scene load_steps=40 format=4 uid="uid://ch4erx4e0mdkr"]
+[gd_scene load_steps=42 format=4 uid="uid://ch4erx4e0mdkr"]
 
+[ext_resource type="Script" uid="uid://8itaioxood0e" path="res://scripts/game.gd" id="1_m26gy"]
 [ext_resource type="Texture2D" uid="uid://1fxv2yxu5fp3" path="res://Assets/assitts/tile map.png" id="2_xce7f"]
 [ext_resource type="Texture2D" uid="uid://wws3cqc1ktyo" path="res://Assets/assitts/72e369fbe398f823b366d87d81bfe290.jpg" id="3_esy2y"]
-[ext_resource type="PackedScene" uid="uid://dn6oxydblu1pp" path="res://scripts/skeleton.tscn" id="4_xce7f"]
 [ext_resource type="PackedScene" uid="uid://c5webmamf7x03" path="res://scripts/grean_button.tscn" id="5_6igeb"]
 [ext_resource type="PackedScene" uid="uid://q71ojof7nnh5" path="res://scripts/player.tscn" id="6_e48sv"]
 [ext_resource type="PackedScene" uid="uid://m3hbeuqeeik7" path="res://scripts/orange_button.tscn" id="6_nrx5b"]
 [ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="7_m8yj6"]
 [ext_resource type="Script" uid="uid://qavquj6boefy" path="res://scripts/area_2d4.gd" id="8_krunx"]
-[ext_resource type="PackedScene" uid="uid://bvtfbqt12vtf2" path="res://scripts/skeleton_20.tscn" id="9_x8pbt"]
+[ext_resource type="PackedScene" uid="uid://8cls2r5tou5r" path="res://scripts/skeleton_100.tscn" id="9_x8pbt"]
 [ext_resource type="Script" uid="uid://mcc4kkmi5dor" path="res://scripts/area_2d_4.gd" id="10_lfna2"]
+[ext_resource type="PackedScene" uid="uid://dgcj8574o71v3" path="res://scripts/skeleton_200.tscn" id="10_m26gy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xce7f"]
 texture = ExtResource("3_esy2y")
@@ -187,7 +188,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8pbt"]
-size = Vector2(2, 24)
+size = Vector2(1, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b28d"]
 size = Vector2(13, 0)
@@ -269,7 +270,11 @@ _data = {
 &"the longest one ": SubResource("Animation_qc5qw")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n26xj"]
+size = Vector2(1, 20)
+
 [node name="Game" type="Node2D"]
+script = ExtResource("1_m26gy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -215)
@@ -379,69 +384,13 @@ libraries = {
 }
 autoplay = "axskjscbbcajcbbc"
 
-[node name="Skeletons" type="Node" parent="."]
-
-[node name="skeleton2" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-435, -21)
-
-[node name="skeleton4" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-759, -21)
-
-[node name="skeleton3" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-585, -21)
-
-[node name="skeleton 20" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(415, -20)
-
-[node name="skeleton 21" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(794, -19)
-
-[node name="skeleton 22" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(898, -19)
-
-[node name="skeleton" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-953, -21)
-
-[node name="skeleton5" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-1225, -23)
-
-[node name="skeleton6" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-1090, -19)
-
-[node name="skeleton7" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-1358, -21)
-
-[node name="skeleton 23" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(1127, -21)
-
-[node name="skeleton 24" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(1307, -21)
-
-[node name="skeleton 25" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(1399, -21)
-
-[node name="skeleton8" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("4_xce7f")]
-position = Vector2(-1491, -21)
-
-[node name="skeleton 26" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("9_x8pbt")]
-position = Vector2(1531, -21)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-6, 0)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-122.5, -15)
-shape = SubResource("RectangleShape2D_x8pbt")
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(137, -34)
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-6, 18)
+position = Vector2(-7, 18)
 shape = SubResource("RectangleShape2D_x8pbt")
 
 [node name="Buttons areas" type="Node" parent="."]
@@ -473,6 +422,43 @@ libraries = {
 &"": SubResource("AnimationLibrary_ushlv")
 }
 autoplay = "the longest one "
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-122.5, -15)
+shape = SubResource("RectangleShape2D_n26xj")
+
+[node name="Skeletons" type="Node" parent="."]
+
+[node name="Skeleton 100" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("9_x8pbt")]
+position = Vector2(-507, -21)
+
+[node name="Skeleton 200" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("10_m26gy")]
+position = Vector2(489, -21)
+
+[node name="Skeleton 201" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("10_m26gy")]
+position = Vector2(641, -21)
+
+[node name="Skeleton 202" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("10_m26gy")]
+position = Vector2(760, -21)
+
+[node name="Skeleton 203" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("10_m26gy")]
+position = Vector2(881, -21)
+
+[node name="Skeleton 204" parent="Skeletons" groups=["skeletons right"] instance=ExtResource("10_m26gy")]
+position = Vector2(1036, -21)
+
+[node name="Skeleton 101" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("9_x8pbt")]
+position = Vector2(-642, -21)
+
+[node name="Skeleton 102" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("9_x8pbt")]
+position = Vector2(-787, -21)
+
+[node name="Skeleton 103" parent="Skeletons" groups=["skeletons left"] instance=ExtResource("9_x8pbt")]
+position = Vector2(-957, -21)
 
 [connection signal="body_entered" from="Buttons areas/Area2D2" to="Buttons areas/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="Buttons areas/Area2D" to="Buttons areas/Area2D" method="_on_body_entered"]

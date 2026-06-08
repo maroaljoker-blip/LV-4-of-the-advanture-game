@@ -1,14 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5webmamf7x03"]
+[gd_scene load_steps=5 format=3 uid="uid://c5webmamf7x03"]
 
 [ext_resource type="Script" uid="uid://5cd27s8dw006" path="res://scripts/grean_button.gd" id="1_kkako"]
 [ext_resource type="Texture2D" uid="uid://dk87pn2s4g1c1" path="res://Assets/Skeleton/button UI.png" id="1_n412r"]
 [ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="3_uxm73"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbf8s"]
-size = Vector2(7, 25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0fab"]
-size = Vector2(14, 13)
+size = Vector2(8, 25)
 
 [node name="Grean button" type="Area2D"]
 collision_layer = 4
@@ -17,7 +14,7 @@ script = ExtResource("1_kkako")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(0, 1, 0.34509805, 1)
-position = Vector2(11.5, -5.5)
+position = Vector2(5, -5.5)
 shape = SubResource("RectangleShape2D_bbf8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -25,14 +22,6 @@ modulate = Color(0.05300995, 0.73477715, 0.21976095, 1)
 texture = ExtResource("1_n412r")
 region_enabled = true
 region_rect = Rect2(0, 0, 16.444445, 16.518518)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1, -0.5)
-shape = SubResource("RectangleShape2D_x0fab")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0

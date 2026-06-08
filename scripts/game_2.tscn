@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://q71ojof7nnh5" path="res://scripts/player.tscn" id="5_f4eyk"]
 [ext_resource type="Script" uid="uid://mcc4kkmi5dor" path="res://scripts/area_2d_4.gd" id="6_pqa3e"]
 [ext_resource type="Script" uid="uid://qavquj6boefy" path="res://scripts/area_2d4.gd" id="7_poo1g"]
-[ext_resource type="PackedScene" uid="uid://bx34x07ef4e0d" path="res://scripts/skeletons_40.tscn" id="7_pqa3e"]
-[ext_resource type="PackedScene" uid="uid://5hx05eh0mosp" path="res://scripts/skeleton_30.tscn" id="8_iyj0n"]
 [ext_resource type="FontFile" uid="uid://5vinmtnykv4r" path="res://Assets/assitts/Pixel_Operator_8/PixelOperator8-Bold.ttf" id="9_f4eyk"]
+[ext_resource type="PackedScene" uid="uid://deb0d4pu8ck2a" path="res://scripts/skeleton_101.tscn" id="9_pqa3e"]
+[ext_resource type="PackedScene" uid="uid://bsbwaslk4oi6" path="res://scripts/skeleton_201.tscn" id="10_pqa3e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m8lfh"]
 texture = ExtResource("1_c830l")
@@ -138,6 +138,21 @@ _data = {
 &"the longest one ": SubResource("Animation_qc5qw")
 }
 
+[sub_resource type="Animation" id="Animation_f4eyk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_0rfjg"]
 resource_name = "dcdcm"
 length = 10.0
@@ -154,25 +169,25 @@ tracks/0/keys = {
 "values": [0, 69, 69, 0]
 }
 
-[sub_resource type="Animation" id="Animation_f4eyk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f4eyk"]
+_data = {
+&"RESET": SubResource("Animation_f4eyk"),
+&"dcdcm": SubResource("Animation_0rfjg")
+}
+
+[sub_resource type="Animation" id="Animation_poo1g"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_characters")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_f4eyk"]
-_data = {
-&"RESET": SubResource("Animation_f4eyk"),
-&"dcdcm": SubResource("Animation_0rfjg")
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_pqa3e"]
@@ -189,21 +204,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_poo1g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iyj0n"]
@@ -270,14 +270,6 @@ position = Vector2(-113, -10)
 [node name="Player" parent="." instance=ExtResource("5_f4eyk")]
 position = Vector2(0, -23)
 
-[node name="skeletons" type="Node" parent="."]
-
-[node name="skeleton 30" parent="skeletons" groups=["skeletons right"] instance=ExtResource("8_iyj0n")]
-position = Vector2(415, -21)
-
-[node name="skeletons 40" parent="skeletons" instance=ExtResource("7_pqa3e")]
-position = Vector2(-340, -21)
-
 [node name="Buttons areas" type="Node" parent="."]
 
 [node name="Area2D2" type="Area2D" parent="Buttons areas"]
@@ -341,6 +333,35 @@ libraries = {
 &"": SubResource("AnimationLibrary_iyj0n")
 }
 autoplay = "md d"
+
+[node name="skeletons" type="Node" parent="."]
+
+[node name="skeleton 101" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
+position = Vector2(-510, -21)
+
+[node name="skeleton 102" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
+position = Vector2(-641, -21)
+
+[node name="skeleton 103" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
+position = Vector2(-796, -21)
+
+[node name="skeleton 104" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
+position = Vector2(-973, -21)
+
+[node name="skeleton 105" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
+position = Vector2(-1139, -21)
+
+[node name="skeleton 201" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
+position = Vector2(658, -21)
+
+[node name="skeleton 203" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
+position = Vector2(828, -21)
+
+[node name="skeleton 202" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
+position = Vector2(521, -21)
+
+[node name="skeleton 204" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
+position = Vector2(1003, -20)
 
 [connection signal="body_entered" from="Buttons areas/Area2D2" to="Buttons areas/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="Buttons areas/Area2D" to="Buttons areas/Area2D" method="_on_body_entered"]

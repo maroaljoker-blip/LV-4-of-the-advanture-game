@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
-@onready var anything: CharacterBody2D = $"../anything"
+@onready var anything_2: CharacterBody2D = $"../anything2"
+
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
@@ -16,12 +17,12 @@ func _process(delta):
 	if moving:
 		position.x += speed * delta
 
-	if !activated and !is_instance_valid(anything):
+	if !activated and !is_instance_valid(anything_2):
 		activated = true
 
 		print("Previous body disappeared")
 
-		await get_tree().create_timer(1.7).timeout
+		await get_tree().create_timer(3.4).timeout
 
 		print("Collision enabled")
 
