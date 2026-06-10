@@ -1,8 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm5y3px1mx6f"]
+[gd_scene load_steps=9 format=3 uid="uid://bm5y3px1mx6f"]
 
 [ext_resource type="Texture2D" uid="uid://dy3ldgd7kb4ek" path="res://Assets/assitts/HERO/1. idle.png" id="1_lh3am"]
-[ext_resource type="Script" uid="uid://bq6x5tfi43ysk" path="res://scripts/army.gd" id="2_8tok8"]
-[ext_resource type="PackedScene" uid="uid://bgcoc5n6nf8o3" path="res://scripts/kill_zone.tscn" id="2_q2vrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2vrl"]
 atlas = ExtResource("1_lh3am")
@@ -54,17 +52,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ilq5l"]
-size = Vector2(14, 27)
-
 [node name="army" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_j82xr")
 autoplay = "default"
-frame_progress = 0.83674544
-script = ExtResource("2_8tok8")
-
-[node name="kill zone" parent="." instance=ExtResource("2_q2vrl")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kill zone"]
-position = Vector2(0, 3.5)
-shape = SubResource("RectangleShape2D_ilq5l")
+frame_progress = 0.07081725

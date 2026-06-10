@@ -8,6 +8,15 @@ extends Area2D
 
 @onready var collision_shape_2d_3: CollisionShape2D = $PHP/CollisionShape2D3
 
+@onready var ph: CharacterBody2D = $PH
+
+@onready var hp: CharacterBody2D = $HP
+
+
+@onready var php: CharacterBody2D = $PHP
+
+
+
 
 const speed = -40
 var moving = false
@@ -24,8 +33,12 @@ func die():
 	dead = true
 	moving = false
 	animated_sprite_2d.play("dead")
-	collision_layer = 0
-	collision_mask = 0
+	ph.collision_layer = 8
+	ph.collision_mask = 8
+	hp.collision_layer = 8
+	hp.collision_layer = 8
+	php.collision_layer = 8
+	php.collision_mask = 8
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
@@ -36,7 +49,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 		moving = false
 		animated_sprite_2d.play("attack")
-		await get_tree().create_timer(1.3).timeout
+		await get_tree().create_timer(1).timeout
 		collision_shape_2.set_deferred("disabled", false)
 
 		await get_tree().create_timer(1.3).timeout

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://w8ddnwnhij6f"]
 
-[ext_resource type="Script" uid="uid://b5x3bpxnkk46" path="res://anything_2.gd" id="1_3yba2"]
+[ext_resource type="Script" uid="uid://b5x3bpxnkk46" path="res://scripts/anything_2.gd" id="1_3yba2"]
 [ext_resource type="Texture2D" uid="uid://ddeymnystr8fk" path="res://Assets/assitts/MonedaR.png" id="2_b612d"]
 [ext_resource type="Script" uid="uid://hl1np1g3vdwr" path="res://scripts/area_2d28.gd" id="3_y3ilh"]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=4 uid="uid://c53xuksofex17"]
+[gd_scene load_steps=41 format=4 uid="uid://c53xuksofex17"]
 
 [ext_resource type="Texture2D" uid="uid://wws3cqc1ktyo" path="res://Assets/assitts/72e369fbe398f823b366d87d81bfe290.jpg" id="1_c830l"]
+[ext_resource type="Script" uid="uid://cx3yi34n41f2j" path="res://scripts/game_2.gd" id="1_poo1g"]
 [ext_resource type="Texture2D" uid="uid://1fxv2yxu5fp3" path="res://Assets/assitts/tile map.png" id="2_tjm6n"]
 [ext_resource type="PackedScene" uid="uid://c5webmamf7x03" path="res://scripts/grean_button.tscn" id="3_l83om"]
 [ext_resource type="PackedScene" uid="uid://m3hbeuqeeik7" path="res://scripts/orange_button.tscn" id="4_0rfjg"]
@@ -189,6 +190,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_pqa3e"]
 resource_name = "md d"
@@ -205,6 +218,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iyj0n"]
 _data = {
@@ -212,7 +237,69 @@ _data = {
 &"md d": SubResource("Animation_pqa3e")
 }
 
+[sub_resource type="Animation" id="Animation_mc513"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Wave ends in 5"]
+}
+
+[sub_resource type="Animation" id="Animation_iyj0n"]
+resource_name = "mk"
+length = 46.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 41),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(41, 42, 43, 44, 45, 46),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Wave ends in 5", "Wave ends in 4", "Wave ends in 3", "Wave ends in 2", "Wave ends in 1", "Wave ends in 0"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_unk4o"]
+_data = {
+&"RESET": SubResource("Animation_mc513"),
+&"mk": SubResource("Animation_iyj0n")
+}
+
 [node name="game 2" type="Node2D"]
+script = ExtResource("1_poo1g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, -215)
@@ -273,6 +360,7 @@ position = Vector2(0, -23)
 [node name="Buttons areas" type="Node" parent="."]
 
 [node name="Area2D2" type="Area2D" parent="Buttons areas"]
+position = Vector2(4, 0)
 script = ExtResource("6_pqa3e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons areas/Area2D2"]
@@ -334,6 +422,21 @@ libraries = {
 }
 autoplay = "md d"
 
+[node name="Label3" type="Label" parent="labels"]
+visible = false
+offset_left = -86.0
+offset_top = -282.0
+offset_right = 108.0
+offset_bottom = -259.0
+theme_override_fonts/font = ExtResource("9_f4eyk")
+text = "Wave ends in 5"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="labels/Label3"]
+libraries = {
+&"": SubResource("AnimationLibrary_unk4o")
+}
+autoplay = "mk"
+
 [node name="skeletons" type="Node" parent="."]
 
 [node name="skeleton 101" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
@@ -349,19 +452,31 @@ position = Vector2(-796, -21)
 position = Vector2(-973, -21)
 
 [node name="skeleton 105" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
-position = Vector2(-1139, -21)
+position = Vector2(-1150, -21)
 
 [node name="skeleton 201" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
-position = Vector2(658, -21)
+position = Vector2(670, -21)
 
 [node name="skeleton 203" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
-position = Vector2(828, -21)
+position = Vector2(842, -21)
 
 [node name="skeleton 202" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
 position = Vector2(521, -21)
 
 [node name="skeleton 204" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
-position = Vector2(1003, -20)
+position = Vector2(1027, -20)
+
+[node name="skeleton 106" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
+position = Vector2(-1348, -21)
+
+[node name="skeleton 107" parent="skeletons" groups=["skeletons left"] instance=ExtResource("9_pqa3e")]
+position = Vector2(-1531, -21)
+
+[node name="skeleton 205" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
+position = Vector2(1242, -21)
+
+[node name="skeleton 206" parent="skeletons" groups=["skeletons right"] instance=ExtResource("10_pqa3e")]
+position = Vector2(1428, -21)
 
 [connection signal="body_entered" from="Buttons areas/Area2D2" to="Buttons areas/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="Buttons areas/Area2D" to="Buttons areas/Area2D" method="_on_body_entered"]

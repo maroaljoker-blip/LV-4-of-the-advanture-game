@@ -4,6 +4,12 @@ extends Area2D
 @onready var collision_shape_2: CollisionShape2D = $Sin/CollisionShape2
 @onready var collision_shape_2d_2: CollisionShape2D = $Cos/CollisionShape2D2
 @onready var collision_shape_2d_3: CollisionShape2D = $Tan/CollisionShape2D3
+@onready var sin: CharacterBody2D = $Sin
+
+@onready var cos: CharacterBody2D = $Cos
+
+@onready var tan: CharacterBody2D = $Tan
+
 
 
 
@@ -22,8 +28,12 @@ func die():
 	dead = true
 	moving = false
 	animated_sprite_2d.play("dead")
-	collision_layer = 0
-	collision_mask = 0
+	sin.collision_layer = 8
+	sin.collision_mask = 8
+	cos.collision_layer = 8
+	cos.collision_layer = 8
+	tan.collision_layer = 8
+	tan.collision_mask = 8
 	await get_tree().create_timer(2.0).timeout
 	queue_free()
 
@@ -34,7 +44,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 		moving = false
 		animated_sprite_2d.play("attack")
-		await get_tree().create_timer(1.3).timeout
+		await get_tree().create_timer(1).timeout
 		collision_shape_2.set_deferred("disabled", false)
 
 		await get_tree().create_timer(1.3).timeout
