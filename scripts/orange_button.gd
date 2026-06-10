@@ -11,7 +11,7 @@ func _ready():
 	update_label()
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "alpha" or body.name == "beta" or body.name == "theta" or body.name == "shawrma lahme" or body.name == "shawrma phrakh" or body.name == "shawrma sjk": 
+	if body.name == "alpha" or body.name == "beta" or body.name == "theta" or body.name == "shawrma lahme" or body.name == "shawrma phrakh" or body.name == "shawrma sjk" or body.name == "Neno": 
 
 		if not can_take_hit:
 			return

@@ -8,8 +8,8 @@
 size = Vector2(8, 25)
 
 [node name="Grean button" type="Area2D"]
-collision_layer = 4
-collision_mask = 2
+collision_layer = 20
+collision_mask = 18
 script = ExtResource("1_kkako")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

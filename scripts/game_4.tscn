@@ -143,6 +143,21 @@ _data = {
 &"the longest one ": SubResource("Animation_qc5qw")
 }
 
+[sub_resource type="Animation" id="Animation_qnrp0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_wpvdx"]
 resource_name = "sns"
 length = 15.0
@@ -159,25 +174,25 @@ tracks/0/keys = {
 "values": [false, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_qnrp0"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjolh"]
+_data = {
+&"RESET": SubResource("Animation_qnrp0"),
+&"sns": SubResource("Animation_wpvdx")
+}
+
+[sub_resource type="Animation" id="Animation_mq8pl"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
+tracks/0/path = NodePath(".:visible_characters")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjolh"]
-_data = {
-&"RESET": SubResource("Animation_qnrp0"),
-&"sns": SubResource("Animation_wpvdx")
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_7mtde"]
@@ -196,25 +211,25 @@ tracks/0/keys = {
 "values": [0, 0, 196, 196, 0]
 }
 
-[sub_resource type="Animation" id="Animation_mq8pl"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wf6lk"]
+_data = {
+&"RESET": SubResource("Animation_mq8pl"),
+&"new_animation": SubResource("Animation_7mtde")
+}
+
+[sub_resource type="Animation" id="Animation_34c33"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_characters")
+tracks/0/path = NodePath("labels/army:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wf6lk"]
-_data = {
-&"RESET": SubResource("Animation_mq8pl"),
-&"new_animation": SubResource("Animation_7mtde")
+"update": 0,
+"values": [Vector2(-2, -601)]
 }
 
 [sub_resource type="Animation" id="Animation_u76aa"]
@@ -243,21 +258,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(-2, -284), Vector2(-2, -601)]
-}
-
-[sub_resource type="Animation" id="Animation_34c33"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("labels/army:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, -601)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7mtde"]
@@ -320,7 +320,7 @@ collision_layer = 16
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D2"]
-position = Vector2(-353, -25)
+position = Vector2(-348, -25)
 shape = SubResource("RectangleShape2D_34c33")
 
 [node name="Grean button" parent="." instance=ExtResource("3_u76aa")]
@@ -413,7 +413,7 @@ libraries = {
 autoplay = "sxsx"
 
 [node name="shadow" parent="." instance=ExtResource("12_34c33")]
-position = Vector2(-372, -15)
+position = Vector2(-482, -12)
 
 [connection signal="body_entered" from="Buttons areas/Area2D2" to="Buttons areas/Area2D2" method="_on_body_entered"]
 [connection signal="body_entered" from="Buttons areas/Area2D" to="Buttons areas/Area2D" method="_on_body_entered"]
