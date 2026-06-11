@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://chan8vw2n4ml5"]
+[gd_scene load_steps=4 format=3 uid="uid://chan8vw2n4ml5"]
 
+[ext_resource type="Script" uid="uid://6ddiw80ilegv" path="res://scripts/red_button.gd" id="1_l6qrs"]
 [ext_resource type="Texture2D" uid="uid://dk87pn2s4g1c1" path="res://Assets/Skeleton/button UI.png" id="1_o2tbv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tfpbh"]
-size = Vector2(16, 13)
+size = Vector2(505, 4)
 
 [node name="Red button" type="Area2D"]
+script = ExtResource("1_l6qrs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_o2tbv")
@@ -13,5 +15,13 @@ region_enabled = true
 region_rect = Rect2(-0.14796972, 47.746338, 16.296297, 17.18518)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1.5)
+position = Vector2(-1.5, -105)
 shape = SubResource("RectangleShape2D_tfpbh")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -12.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = -5.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

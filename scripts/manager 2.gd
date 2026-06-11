@@ -1,4 +1,3 @@
-
 extends Node
 
 var score = 0
@@ -9,7 +8,7 @@ func _ready():
 	start_timer()
 
 func start_timer():
-	await get_tree().create_timer(60.0).timeout
+	await get_tree().create_timer(120).timeout
 
 	# If 20 coins were NOT collected in 60 seconds
 	if score < 20:
@@ -20,4 +19,8 @@ func add_point():
 	coins_label.text = str(score) + " $"
 	print("+1 coin!")
 
-	
+	if score >= 20:
+		call_deferred("go_to_next_scene")
+
+func go_to_next_scene():
+	get_tree().change_scene_to_file("res://scripts/game_6.tscn")

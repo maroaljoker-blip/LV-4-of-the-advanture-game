@@ -34,24 +34,38 @@ func _process(delta):
 		position.x += speed * delta
 
 func _on_body_entered(body: Node2D) -> void:
-	moving = false
+	if dead:
+		return
 
+	moving = false
 	animated_sprite_2d.play("idle")
 
 	await get_tree().create_timer(1.0).timeout
+	if dead:
+		return
+
 	animated_sprite_2d.play("jump")
 
 	await get_tree().create_timer(1.0).timeout
+	if dead:
+		return
+
 	animated_sprite_2d.play("fall")
 
 	await get_tree().create_timer(1.0).timeout
+	if dead:
+		return
 
-	# Move up gradually
 	for i in range(110):
 		position.y -= 1
 		await get_tree().create_timer(0.01).timeout
+		if dead:
+			return
 
 	animated_sprite_2d_2.play("bolt")
 
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.0).timeout
+	if dead:
+		return
+
 	collision_shape_2d.set_deferred("disabled", false)

@@ -428,7 +428,7 @@ offset_bottom = -341.0
 theme_override_fonts/font = ExtResource("2_1g3ka")
 text = "The player speed will increase; however
  now you will have to collect the coins
- falling until you collect 20 coins to pass
+ falling until you collect 20 coin to pass
  the level"
 visible_characters = 0
 visible_ratio = 0.0
