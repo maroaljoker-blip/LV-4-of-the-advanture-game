@@ -1,130 +1,130 @@
-[gd_scene load_steps=50 format=3 uid="uid://c47dvfs1iaqph"]
+[gd_scene load_steps=50 format=3 uid="uid://pmirq03wsfm1"]
 
-[ext_resource type="Texture2D" uid="uid://dh0gt1mch8b40" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/1. idle.png" id="1_cw0ob"]
-[ext_resource type="Script" uid="uid://cxvipqcpaycsl" path="res://scripts/shadow.gd" id="1_xw6oe"]
-[ext_resource type="Texture2D" uid="uid://wcff38inqcp8" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/9. Death.png" id="2_d3e3p"]
-[ext_resource type="Texture2D" uid="uid://dj4hb0dnmm0y2" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/8. fall.png" id="2_ih8lw"]
-[ext_resource type="Texture2D" uid="uid://cqpue4w8ss1a0" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/2. run.png" id="2_l7vum"]
-[ext_resource type="Texture2D" uid="uid://c6unhkdfrh5qt" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/6. shoot effect.png" id="3_cisig"]
-[ext_resource type="Texture2D" uid="uid://vinidpgebsfx" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/7. jump.png" id="4_d3e3p"]
+[ext_resource type="Script" uid="uid://dr4xu0xdfmh6u" path="res://shadow_2.gd" id="1_2f2xa"]
+[ext_resource type="Texture2D" uid="uid://wcff38inqcp8" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/9. Death.png" id="2_p6xnn"]
+[ext_resource type="Texture2D" uid="uid://dj4hb0dnmm0y2" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/8. fall.png" id="3_c0kcs"]
+[ext_resource type="Texture2D" uid="uid://dh0gt1mch8b40" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/1. idle.png" id="4_piwkc"]
+[ext_resource type="Texture2D" uid="uid://vinidpgebsfx" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/7. jump.png" id="5_c4jwh"]
+[ext_resource type="Texture2D" uid="uid://cqpue4w8ss1a0" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/2. run.png" id="6_ug8p7"]
+[ext_resource type="Texture2D" uid="uid://c6unhkdfrh5qt" path="res://Assets/assitts/SHADOW Series - The Free Assets/SAHDOW Series - Frost Curse Boss/Sprite/6. shoot effect.png" id="7_pk514"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wk1g"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(0, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4r8hx"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(31, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cd3na"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(62, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_er68e"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(93, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7oaxg"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(124, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57b18"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(155, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3e1l0"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(186, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_we3rh"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(217, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xm6ck"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(248, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vd5g6"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(279, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a6mou"]
-atlas = ExtResource("2_d3e3p")
+atlas = ExtResource("2_p6xnn")
 region = Rect2(310, 0, 31, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dv08e"]
-atlas = ExtResource("2_ih8lw")
+atlas = ExtResource("3_c0kcs")
 region = Rect2(2, 0, 23, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hiawr"]
-atlas = ExtResource("2_ih8lw")
+atlas = ExtResource("3_c0kcs")
 region = Rect2(25, 0, 23, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ax4bs"]
-atlas = ExtResource("2_ih8lw")
+atlas = ExtResource("3_c0kcs")
 region = Rect2(48, 0, 23, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhnmq"]
-atlas = ExtResource("2_ih8lw")
+atlas = ExtResource("3_c0kcs")
 region = Rect2(71, 0, 23, 39)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xw6oe"]
-atlas = ExtResource("1_cw0ob")
+atlas = ExtResource("4_piwkc")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih8lw"]
-atlas = ExtResource("1_cw0ob")
+atlas = ExtResource("4_piwkc")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3e3p"]
-atlas = ExtResource("1_cw0ob")
+atlas = ExtResource("4_piwkc")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_si17k"]
-atlas = ExtResource("1_cw0ob")
+atlas = ExtResource("4_piwkc")
 region = Rect2(96, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_txnmf"]
-atlas = ExtResource("1_cw0ob")
+atlas = ExtResource("4_piwkc")
 region = Rect2(128, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80aha"]
-atlas = ExtResource("1_cw0ob")
+atlas = ExtResource("4_piwkc")
 region = Rect2(160, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1d6ix"]
-atlas = ExtResource("4_d3e3p")
+atlas = ExtResource("5_c4jwh")
 region = Rect2(0, 0, 15, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7gxsy"]
-atlas = ExtResource("4_d3e3p")
+atlas = ExtResource("5_c4jwh")
 region = Rect2(15, 0, 15, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbnpf"]
-atlas = ExtResource("4_d3e3p")
+atlas = ExtResource("5_c4jwh")
 region = Rect2(30, 0, 15, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1m3ja"]
-atlas = ExtResource("4_d3e3p")
+atlas = ExtResource("5_c4jwh")
 region = Rect2(45, 0, 15, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_knyew"]
-atlas = ExtResource("2_l7vum")
+atlas = ExtResource("6_ug8p7")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_55m27"]
-atlas = ExtResource("2_l7vum")
+atlas = ExtResource("6_ug8p7")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fj0qs"]
-atlas = ExtResource("2_l7vum")
+atlas = ExtResource("6_ug8p7")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lia0i"]
-atlas = ExtResource("2_l7vum")
+atlas = ExtResource("6_ug8p7")
 region = Rect2(96, 0, 32, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ax4bs"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp3i6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -239,46 +239,46 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw0ob"]
-size = Vector2(6, 24)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2f2xa"]
+size = Vector2(10, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3eb1"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(600, 0, 120, 69)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3krnd"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(1045, 0, 135, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rn2a6"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(1180, 0, 135, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_if5lu"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(1315, 0, 135, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_it42t"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(1450, 0, 135, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jtb1"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(1585, 0, 135, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o26fc"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(1720, 0, 135, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e600o"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(1855, 0, 135, 68)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vii2q"]
-atlas = ExtResource("3_cisig")
+atlas = ExtResource("7_pk514")
 region = Rect2(1990, 0, 135, 68)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t3eb1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y550y"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -324,40 +324,43 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7vum"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtrn1"]
 size = Vector2(9, 17.000008)
 
-[node name="shadow" type="Area2D"]
+[node name="Shadow 2" type="Area2D"]
 collision_layer = 16
 collision_mask = 16
-script = ExtResource("1_xw6oe")
+script = ExtResource("1_2f2xa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.2425926, -8.705894)
 scale = Vector2(1.172338, 1.0716909)
-sprite_frames = SubResource("SpriteFrames_ax4bs")
-animation = &"idle"
+sprite_frames = SubResource("SpriteFrames_cp3i6")
+animation = &"run"
 autoplay = "run"
+frame_progress = 0.93785757
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, -6)
-shape = SubResource("RectangleShape2D_cw0ob")
+position = Vector2(-5, -7)
+shape = SubResource("RectangleShape2D_2f2xa")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(117.42359, 42.28309)
-rotation = 0.02617994
+position = Vector2(-116.424, 42.283005)
+rotation = -0.061086524
 scale = Vector2(2.0596063, 1.846867)
-sprite_frames = SubResource("SpriteFrames_t3eb1")
+sprite_frames = SubResource("SpriteFrames_y550y")
 animation = &"bolt"
+flip_h = true
 
-[node name="Nemo" type="CharacterBody2D" parent="."]
+[node name="Neno" type="CharacterBody2D" parent="."]
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Nemo"]
-position = Vector2(241.5, 94.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Neno"]
+position = Vector2(-234.50002, 94.5)
 scale = Vector2(0.99999994, 0.9999999)
-shape = SubResource("RectangleShape2D_l7vum")
+shape = SubResource("RectangleShape2D_mtrn1")
 disabled = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -2,12 +2,13 @@ extends Area2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animated_sprite_2d_2: AnimatedSprite2D = $AnimatedSprite2D2
-@onready var collision_shape_2d: CollisionShape2D = $Nemo/CollisionShape2D
-@onready var nemo: CharacterBody2D = $Nemo
+
+@onready var neno: CharacterBody2D = $Neno
+@onready var collision_shape_2d: CollisionShape2D = $Neno/CollisionShape2D
 
 
 
-var speed = 30.0
+var speed = -30.0
 var moving = false
 var dead = false
 func _ready():
@@ -20,8 +21,8 @@ func die():
 
 	dead = true 
 	moving = false
-	nemo.collision_mask = 7
-	nemo.collision_layer = 7
+	neno.collision_mask = 7
+	neno.collision_layer = 7
 	animated_sprite_2d.play("dead")
 	await get_tree().create_timer(1).timeout
 	queue_free()
